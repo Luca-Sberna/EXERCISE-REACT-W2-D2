@@ -1,8 +1,15 @@
-const MyJumbotron = () => (
-  <div className="bg-info rounded px-4 py-5 my-2">
-    <h1 className="display-4 mb-0">Welcome to EpiBooks!</h1>
-    <p className="fs-4 lead">We list books</p>
-  </div>
-);
+import { Container } from "react-bootstrap";
+import { Component } from "react";
+
+class MyJumbotron extends Component {
+  render() {
+    return (
+      <Container className="text-center p-4 border bg-primary rounded-4 my-4 shadow w-50">
+        <h1>Benvenuto nel Paradiso Dei Libri📚</h1>
+        <p>Ti offriamo il meglio del momento dove e quando vuoi!🫢</p>
+      </Container>
+    );
+  }
+}
 
 export default MyJumbotron;

@@ -25,7 +25,9 @@ const BookList = (props) => {
         <Col>
           {/* Input controllato, serve a salvare la stringa per la quale si filtrano i libri (vedi metodo filter() usato in basso) */}
           <Form.Group className="mb-3">
-            <Form.Label className="display-6">Search a book</Form.Label>
+            <Form.Label className="display-6 text-light">
+              Search a book
+            </Form.Label>
             <Form.Control
               type="text"
               placeholder="Search here"
@@ -37,14 +39,15 @@ const BookList = (props) => {
           </Form.Group>
         </Col>
       </Row>
+
       <Row>
-        <Col md={6}>
+        <Col md={7}>
           <Row>
             {props.books
               .filter((b) => b.title.toLowerCase().includes(searchQuery)) // se searchQuery è "" il filter ritorna tutto l'array così com'è,
               // se ha un valore !== "", il filter ritornerà solo gli elementi che includono i caratteri presenti nel this.state.searchQuery in quel momento
               .map((b) => (
-                <Col xs={12} md={3} key={b.asin}>
+                <Col xs={12} md={4} key={b.asin} className="pb-3">
                   <SingleBook
                     book={b} // b è l'oggetto libro vero e proprio passato come prop e accessibile all'interno di SingleBook come this.props.book
                     selectedBook={selectedBook} // selectedBook è l'ASIN passato come prop che verrà usato per determinare quale card si colorerà il bordo di rosso
@@ -54,13 +57,16 @@ const BookList = (props) => {
               ))}
           </Row>
         </Col>
-        <Col md={6}>
+
+        <Col md={5}>
           {selectedBook ? (
             // CommentArea sarà visibile solo dopo aver selezionato un libro, ovvero solo dopo che lo stato selectedBook cambia da "" all'ASIN di un libro
             <CommentArea asin={selectedBook} />
           ) : (
             // nel frattempo si visualizza un alert
-            <Alert variant="info">Seleziona un libro per visualizzare i commenti</Alert>
+            <Alert variant="info">
+              Seleziona un libro per visualizzare i commenti
+            </Alert>
           )}
         </Col>
       </Row>

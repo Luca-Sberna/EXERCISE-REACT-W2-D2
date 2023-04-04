@@ -11,7 +11,7 @@ import fantasy from "./data/fantasy.json";
 
 function App() {
   return (
-    <Container>
+    <Container fluid className='bg-dark'>
       <MyNav />
       <MyJumbotron />
       {/* <AllTheBooks /> */}

@@ -5,7 +5,12 @@ const SingleBook = (props) => {
     <>
       <Card
         onClick={() => props.changeSelectedBook(props.book.asin)}
-        style={{ border: props.selectedBook === props.book.asin ? "3px solid red" : "3px solid #ebebeb" }}
+        style={{
+          border:
+            props.selectedBook === props.book.asin
+              ? "3px solid blue"
+              : "3px solid #ebebeb",
+        }}
       >
         <Card.Img variant="top" src={props.book.img} />
         <Card.Body>
