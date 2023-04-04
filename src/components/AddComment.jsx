@@ -24,12 +24,12 @@ const AddComment = (props) => {
         body: JSON.stringify({
           comment,
           rate,
-          elementId
+          elementId,
         }),
         headers: {
           "Content-Type": "application/json",
-          Authorization: AUTH_KEY
-        }
+          Authorization: AUTH_KEY,
+        },
       });
       if (response.ok) {
         props.fetchComments();
@@ -47,7 +47,7 @@ const AddComment = (props) => {
         <Form.Label>Commento</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Inserisci il commento"
+          placeholder="Inserisci il comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
