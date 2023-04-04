@@ -2,7 +2,7 @@ import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
 import { useState, useEffect } from "react";
 const AUTH_KEY =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEzYjZhZGM1NmIzNjAwMTMzZmU1NzAiLCJpYXQiOjE2ODA1MjI2MjcsImV4cCI6MTY4MTczMjIyN30.o95uQAsLLXkKapQuegwZnOjwLwi5er5rwl3OoGIczs8";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDEzYzU3YWM1NmIzNjAwMTMzZmU1N2MiLCJpYXQiOjE2ODA1NTIxMzIsImV4cCI6MTY4MTc2MTczMn0.ZHGVupEfAXnmeoOa0t1gPDXwjJwbavEljg6Q2zDq1MA";
 const BASE_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 const CommentArea = (props) => {
   const [comments, setComments] = useState([]);
@@ -15,8 +15,8 @@ const CommentArea = (props) => {
     try {
       const response = await fetch(`${BASE_URL}${props.asin}`, {
         headers: {
-          Authorization: AUTH_KEY
-        }
+          Authorization: AUTH_KEY,
+        },
       });
 
       if (response.ok) {
