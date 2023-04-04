@@ -5,7 +5,7 @@ const MyNav = (props) => (
   <Navbar sticky="top" bg="primary" expand="lg" className="border-bottom">
     <Container fluid>
       <Navbar.Brand href="#home">
-        <img src={logo} alt="logo" style={{ width: "3rem" }} />
+        <img src={logo} width={40} alt="logo" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

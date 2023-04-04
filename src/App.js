@@ -11,13 +11,15 @@ import fantasy from "./data/fantasy.json";
 
 function App() {
   return (
-    <Container fluid className='bg-dark'>
+    <div fluid className='bg-dark'>
       <MyNav />
-      <MyJumbotron />
-      {/* <AllTheBooks /> */}
-      <BookList books={fantasy} />
-      <MyFooter />
-    </Container>
+      <Container fluid >
+        <MyJumbotron />
+        {/* <AllTheBooks /> */}
+        <BookList books={fantasy} />
+        <MyFooter />
+      </Container>
+    </div>
   );
 }
 
